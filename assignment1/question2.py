@@ -1,4 +1,17 @@
 class Article:
+    def __init__(self, headline, content, author):
+        self.headline = headline
+        self.content = content
+        self.author = author
+
+    def show(self):
+        print self.content
+
+    def save(self):
+        f = open(headline + '.py', 'w')
+        f.write(content)
+        f.close()
+
     '''
     Question 2a
         Properties:
@@ -32,4 +45,11 @@ class Picture:
          Methods
             - show (show image)
     '''
+
+    def __init__(self, filename, photographer):
+        self.filename = filename
+        self.photographer = photographer
+
+    def show(self):
+            
     pass
