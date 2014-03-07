@@ -108,7 +108,7 @@ def common_words_tuple(filename, min_chars):
 
     while (max > 0):
         for key in frequencies:
-            if (frequencies[key] == max): words_list.append([(key,max)])
+            if (frequencies[key] == max): words_list.append((key,max))
         max -= 1
 
     f.close()    
@@ -145,11 +145,11 @@ def common_words_safe(filename, min_chars):
 
         while (max > 0):
             for key in frequencies:
-                if (frequencies[key] == max): words_list.append([(key,max)])
+                if (frequencies[key] == max): words_list.append((key,max))
             max -= 1
 
         return words_list
-        
+
         f.close()    
     except IOError:
         print 'File missing!'
