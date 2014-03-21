@@ -1,0 +1,25 @@
+{% extends "base.html" %}        
+{% block content %}
+    <form action="/authors/create/submit/" method="POST">
+        {% comment %} 
+            crsf_token used to prevent other sites from submitting
+            forms to your Django project
+        {% endcomment %}        
+        {% csrf_token %}
+        <p><b>Add an Author</b></p>
+        <br>
+        <label>First Name</label>
+        <input type="text" name="first">
+        <br>
+        <label>Last Name</label>
+        <input type="text" name="last">
+        <br>
+        <label>Gender</label>
+        <select name="gender">
+            <option value="M">M</option>
+            <option value="F">F</option>
+        </select>
+        <br>
+        <input type="submit" value="Add Author">
+    </form>
+{% endblock %}

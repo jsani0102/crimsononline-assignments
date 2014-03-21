@@ -5,7 +5,14 @@
 <html>
     <head>
         <title>{% block title %}Blogs{% endblock %}</title>
-        {% block css %} {% endblock %}
+        {% block css %} 
+        <style type="text/css">
+            body 
+            {
+                background-color: yellow;
+            }
+        </style>
+        {% endblock %}
     </head>
     <body>
         {% comment %} Block where the pages' content will go {% endcomment %}        

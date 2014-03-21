@@ -4,7 +4,11 @@
     <ul>
         {% for author in authors %}
             <li>
-                <p><a href="{{ author.get_absolute_url }}">{{ author }}</a></p>
+            	{% if author.gender == "M" %}
+                	<p>Mr. <a href="{{ author.get_absolute_url }}">{{ author }}</a></p>
+                {% elif author.gender == "F" %}
+                	<p>Mrs. <a href="{{ author.get_absolute_url }}">{{ author }}</a></p>
+                {% endif %}	
             </li>
         {% endfor %}
     </ul>

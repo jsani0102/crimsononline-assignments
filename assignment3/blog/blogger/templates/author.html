@@ -1,6 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>{{ author }}</h1>
+    <h1>
+    	{% if author.gender == "M" %}
+            Mr.
+        {% elif author.gender == "F" %}
+            Mrs.
+        {% endif %} 
+
+        {{ author }}</h1>
+        
     <h2>Posts</h2>
     <ul>
         {% for post in posts %}

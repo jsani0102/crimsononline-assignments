@@ -6,9 +6,19 @@
             <li>
                 <p><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></p>
                 <p>
-                    By <a href="{{ post.author.get_absolute_url }}">
+                    By 
+
+                    <a href="{{ post.author.get_absolute_url }}">
+                        {% if post.author.gender == "M" %}
+                            Mr.
+                        {% elif post.author.gender == "F" %}
+                            Mrs.
+                        {% endif %} 
                         {{ post.author }}
                     </a>
+                </p>
+                <p>
+                    {{ post.post }}
                 </p>
             </li>
         {% endfor %}

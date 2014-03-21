@@ -11,7 +11,13 @@
         <br>
         <select name="author">
             {% for a in authors %}
-                <option value="{{ a.id }}">{{ a }}</option>
+                <option value="{{ a.id }}">
+                    {% if a.gender == "M" %}
+                        Mr.
+                    {% elif a.gender == "F" %}
+                        Mrs.
+                    {% endif %} 
+                    {{ a }}</option>
             {% endfor %}
         </select>
         <br>
