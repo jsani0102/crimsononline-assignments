@@ -22,8 +22,11 @@ def blog_post(request, post_id):
 # Returns a webpage showing a list of all BlogPosts in the database
 def all_posts(request):
     # Find all blog posts
-    data = {'posts': BlogPost.objects.all()}
-    print BlogPost.objects.all()
+    posts = BlogPost.objects.all()
+
+    posts = [(post, post.post[:100] + "...") for post in posts]
+
+    data = {'posts': posts}
     return render(request, 'all_blog_posts.html', data)
 
 # Returns a form to create a BlogPost

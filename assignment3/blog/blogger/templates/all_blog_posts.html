@@ -2,7 +2,7 @@
 {% block content %}
     <h1>Blog Posts</h1>
     <ul>
-        {% for post in posts %}
+        {% for post, preview in posts %}
             <li>
                 <p><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></p>
                 <p>
@@ -18,7 +18,7 @@
                     </a>
                 </p>
                 <p>
-                    {{ post.post }}
+                    {{ preview }}
                 </p>
             </li>
         {% endfor %}
